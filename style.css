@@ -1,105 +1,200 @@
-/* Include the font from Google Fonts */
+/* Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');
 
-/* Apply the font to all elements */
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Quicksand', sans-serif;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Quicksand',sans-serif;
 }
 
+body{
+    background:#1F1F1F;
+    color:#fff;
+    overflow-x:hidden;
+}
 
+/* Main Container */
 .hero{
-     width: 100%;
-     min-height: 100vh;
-     background: linear-gradient(45deg, #1F1F1F, #1F1F1F);
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     flex-direction: column;
-     color: #fff;
+    width:100%;
+    min-height:100vh;
+    padding:40px 20px 100px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    text-align:center;
 }
 
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Adjust the alpha (4th value) for transparency */
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-}
-
-footer a {
-    color: white;
-    text-decoration: none;
-}
+/* Heading */
 .hero h1{
-    font-size: 45px;
-    font-weight: 500;
-    margin-top: -50px;
-    margin-bottom: 50px;
+    font-size:clamp(2rem, 5vw, 4rem);
+    font-weight:700;
+    margin-bottom:40px;
+    line-height:1.2;
 }
+
 .hero h1 span{
-    color: #AC64FF;
+    color:#AC64FF;
 }
+
+/* Textarea */
 textarea{
-    width: 600px;
-    height: 250px;
-    background: #373737;
-    color: #fff;
-    font-size: 15px;
-    border: 0;
-    outline: 0;
-    padding: 20px;
-    border-radius: 10px;
-    resize: none;
-    margin-bottom: 30px;
-            
+    width:100%;
+    max-width:700px;
+    min-height:250px;
+    background:#373737;
+    color:#fff;
+    font-size:16px;
+    border:none;
+    outline:none;
+    padding:20px;
+    border-radius:18px;
+    resize:none;
+    margin-bottom:25px;
+    transition:0.3s ease;
 }
+
+textarea:focus{
+    box-shadow:0 0 0 3px rgba(172,100,255,0.3);
+}
+
 textarea::placeholder{
-    font-size: 16px;
-    color: #ddd;
+    color:#cfcfcf;
+    font-size:15px;
 }
 
+/* Row */
 .row{
-    width: 600px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    
+    width:100%;
+    max-width:700px;
+    display:flex;
+    align-items:center;
+    gap:15px;
 }
-button{
-    background: #a158f5;
-    color: #fff;
-    font-size: 16px;
-    padding: 10px 30px;
-    border-radius: 35px;
-    border: 0;
-    outline: 0;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-}
-button img{
-    width: 16px;
-    margin-right: 10px
 
-} 
+/* Select */
 select{
-    flex: 1;
-    color: #fff;
-    background: #373737;
-    height: 50px;
-    padding: 0 20px;
-    outline: 0;
-    border: 0;
-    border-radius: 35px;
-    appearance: none;
-    background-image: url(images/images/dropdown.png);
-    background-repeat: no-repeat;
-    background-size: 15px;
-    background-position-x: calc(100% - 20px);
-    background-position-y: 20px;
+    flex:1;
+    height:55px;
+    padding:0 20px;
+    border:none;
+    outline:none;
+    border-radius:50px;
+    background:#373737;
+    color:#fff;
+    font-size:15px;
+    appearance:none;
+    cursor:pointer;
+
+    background-image:url("images/images/dropdown.png");
+    background-repeat:no-repeat;
+    background-size:14px;
+    background-position:right 20px center;
+}
+
+/* Button */
+button{
+    height:55px;
+    padding:0 28px;
+    border:none;
+    outline:none;
+    border-radius:50px;
+    background:#AC64FF;
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    transition:0.3s ease;
+    white-space:nowrap;
+}
+
+button:hover{
+    background:#9449ee;
+    transform:translateY(-2px);
+}
+
+button img{
+    width:18px;
+}
+
+/* Footer */
+footer{
+    width:100%;
+    padding:15px 10px;
+    text-align:center;
+    background:rgba(0,0,0,0.5);
+    position:fixed;
+    bottom:0;
+    left:0;
+    backdrop-filter:blur(10px);
+}
+
+footer p{
+    font-size:14px;
+}
+
+footer a{
+    color:#AC64FF;
+    text-decoration:none;
+    font-weight:600;
+}
+
+/* =========================
+   TABLET RESPONSIVE
+========================= */
+@media (max-width:768px){
+
+    .hero{
+        padding:30px 16px 100px;
+    }
+
+    textarea{
+        min-height:220px;
+        font-size:15px;
+    }
+
+    .row{
+        flex-direction:column;
+        width:100%;
+    }
+
+    select,
+    button{
+        width:100%;
+    }
+
+    button{
+        justify-content:center;
+    }
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width:480px){
+
+    .hero h1{
+        font-size:2rem;
+    }
+
+    textarea{
+        min-height:180px;
+        padding:16px;
+        border-radius:14px;
+    }
+
+    select,
+    button{
+        height:50px;
+        font-size:14px;
+    }
+
+    footer p{
+        font-size:13px;
+    }
 }
